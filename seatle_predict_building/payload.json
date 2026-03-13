@@ -1,0 +1,19 @@
+{
+  "input_data": {
+    "records": [
+      {
+        "OSEBuildingID": 1,
+        "DataYear": 2016,
+        "YearBuilt": 1990,
+        "ListOfAllPropertyUseTypes": "Office,Parking",
+        "LargestPropertyUseType": "Office",
+        "LargestPropertyUseTypeGFA": 25000,
+        "PropertyGFABuilding(s)": 30000,
+        "NumberofFloors": 10,
+        "Latitude": 47.61,
+        "Longitude": -122.33,
+        "PrimaryPropertyType": "Large Office"
+      }
+    ]
+  }
+}

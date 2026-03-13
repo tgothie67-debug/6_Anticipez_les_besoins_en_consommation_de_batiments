@@ -1,0 +1,6 @@
+bentoml
+scikit-learn
+pandas
+numpy
+openpyxl
+pydantic

@@ -1,0 +1,12 @@
+service: "service:BuildingPredictionService"
+include:
+  - "*.py"
+  - "data/*.csv"
+python:
+  packages:
+    - bentoml
+    - scikit-learn
+    - pandas
+    - numpy
+    - openpyxl
+    - pydantic

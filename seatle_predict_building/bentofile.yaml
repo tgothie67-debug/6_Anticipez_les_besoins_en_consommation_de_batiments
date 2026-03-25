@@ -1,12 +1,22 @@
 service: "service:BuildingPredictionService"
+
 include:
-  - "*.py"
+  - "service.py"
+  - "train_and_save.py"
   - "data/*.csv"
+
+models:
+  - "energy_rf_model:latest"
+  - "ghg_rf_model:latest"
+
 python:
   packages:
     - bentoml
     - scikit-learn
     - pandas
     - numpy
-    - openpyxl
     - pydantic
+    - openpyxl
+
+docker:
+  python_version: "3.11"

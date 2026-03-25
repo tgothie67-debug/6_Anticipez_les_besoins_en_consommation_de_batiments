@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.ensemble import RandomForestRegressor
 import bentoml
 
-
+# Modèle énergie
 def train_energy_model():
     X = pd.read_csv("data/features.csv")
     X = X.drop(columns=["SiteEnergyUse(kBtu)", "LargestPropertyUseType"])
@@ -35,7 +35,7 @@ def train_energy_model():
 
     print("Modèle énergie sauvegardé dans BentoML Model Store.")
 
-
+# Modèle CO2
 def train_ghg_model():
     X = pd.read_csv("data/features.csv")
     X = X.drop(columns=["LargestPropertyUseType"])

@@ -52,6 +52,8 @@ class PredictRequest(BaseModel):
     records: List[Dict[str, Any]]
 
 
+### FEATURE ENGINEERING ###
+
 def feature_engineering(df_new_building: pd.DataFrame) -> tuple[pd.Series, pd.DataFrame]:
     df_new_building = df_new_building.copy()
 
@@ -117,6 +119,7 @@ def feature_engineering(df_new_building: pd.DataFrame) -> tuple[pd.Series, pd.Da
 
     return building_ids, df_features
 
+###########################
 
 @bentoml.service(
     traffic={"timeout": 60}
@@ -140,9 +143,9 @@ class BuildingPredictionService:
         y_pred_ghg = ghg_model.predict(df_features_ghg)
 
         results = pd.DataFrame({
-            "OSEBuildingID": building_ids,
-            "SiteEnergyUse(kBtu)_pred": y_pred_energy,
-            "TotalGHGEmissions_pred": y_pred_ghg
+        "OSEBuildingID": building_ids,
+        "SiteEnergyUse(kBtu)_pred": np.round(y_pred_energy, 2),
+        "TotalGHGEmissions_pred": np.round(y_pred_ghg, 2)
         })
 
         return results.to_dict(orient="records")

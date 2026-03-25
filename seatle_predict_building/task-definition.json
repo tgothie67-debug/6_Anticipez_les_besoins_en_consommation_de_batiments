@@ -1,0 +1,30 @@
+{
+  "family": "building-prediction-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "1024",
+  "memory": "2048",
+  "executionRoleArn": "arn:aws:iam::593737078357:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "building-prediction-container",
+      "image": "593737078357.dkr.ecr.eu-west-3.amazonaws.com/building-prediction-service:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 3000,
+          "protocol": "tcp"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/building-prediction",
+          "awslogs-region": "eu-west-3",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}

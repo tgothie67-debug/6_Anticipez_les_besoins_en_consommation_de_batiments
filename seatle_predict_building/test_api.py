@@ -1,10 +1,11 @@
 import requests
 
-with open("seatle_predict_building/payload.json") as f:
+# Fichier JSON avec les nouveaux bâtiments à prédire
+with open("payload.json") as f:
     payload = f.read()
 
 response = requests.post(
-    "http://localhost:3000/predict",
+    "http://35.180.125.72:3000/predict", # lien cloud AWS
     data=payload,
     headers={"Content-Type": "application/json"}
 )

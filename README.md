@@ -112,9 +112,10 @@ Exemple d'entrée JSON afin d'utiliser le modèle :
 Sortie :
 ```bash
 [
- {
-  "SiteEnergyUse(kBtu)_pred": 1537560,
-  "TotalGHGEmissions_pred": 31.8
- }
+  {
+    "OSEBuildingID": 1,
+    "SiteEnergyUse(kBtu)_pred": 1537560.1272675868,
+    "TotalGHGEmissions_pred": 31.82967222222221
+  }
 ]
 ```

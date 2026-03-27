@@ -23,9 +23,9 @@ L’objectif du projet est donc de :
 - année de construction
 - localisation géographique
 
-Le projet consiste à développer un pipeline complet de machine learning, puis à déployer le modèle en production sous forme d’API dans le cloud.
-
 # Objectifs du projet
+
+Le projet consiste à développer un pipeline complet de machine learning, puis à déployer le modèle en production sous forme d’API dans le cloud.
 
 - Réaliser une analyse exploratoire des données
 - Nettoyer et transformer les données
